@@ -1,0 +1,12 @@
+{
+    "name": "evgen/kiss-regular-tasks-maker",
+    "require": {
+      "ext-imagick": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tool\\": "src/"
+        }
+    }
+}
