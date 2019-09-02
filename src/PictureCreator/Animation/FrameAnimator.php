@@ -7,6 +7,8 @@ namespace Tool\PictureCreator\Animation;
 use Exception;
 use ImagickException;
 use Tool\PictureCreator\Animation\Frame\MetaFrameAnimation;
+use Tool\PictureCreator\Namings\FrameNaming;
+use Tool\Settings;
 use Tool\Utils;
 
 class FrameAnimator extends AbstractAnimator implements AnimationInterface
@@ -40,10 +42,23 @@ class FrameAnimator extends AbstractAnimator implements AnimationInterface
         $metaAnimator = new MetaFrameAnimation();
 
         if ($this->getType() === self::TYPE_UNI_SEX) {
-            $allCanvas = $metaAnimator->animate(self::ALL_CLASS);
+            $allCanvas = $metaAnimator->animate(self::ALL_CLASS, $this->path);
+            $allCanvas->save(FrameNaming::getAllFrameName());
+            try {
+                Settings::setNextIdItem(Settings::FRAME);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
         } else {
-            $maleCanvas   = $metaAnimator->animate(self::MALE_CLASS);
-            $femaleCanvas = $metaAnimator->animate(self::FEMALE_CLASS);
+            $maleCanvas   = $metaAnimator->animate(self::MALE_CLASS, $this->path);
+            $maleCanvas->save(FrameNaming::getMaleFrameName());
+            $femaleCanvas = $metaAnimator->animate(self::FEMALE_CLASS, $this->path);
+            $femaleCanvas->save(FrameNaming::getFemaleFrameName());
+            try {
+                Settings::setNextIdItem(Settings::FRAME);
+            } catch (Exception $e) {
+                echo $e->getMessage();
+            }
         }
 
     }

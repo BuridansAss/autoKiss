@@ -4,6 +4,8 @@
 namespace Tool;
 
 
+use Exception;
+
 class Utils
 {
     /**
@@ -58,5 +60,21 @@ class Utils
         unset($element);
 
         return $result;
+    }
+
+    /**
+     * @param $path
+     * @return mixed
+     * @throws Exception
+     */
+    public static function getOneDir($path)
+    {
+        $dir = self::getOnlyDirs($path);
+
+        if (count($dir) === 1) {
+            return array_values($dir)[0];
+        } else {
+            throw new Exception('Больше чем одна папка');
+        }
     }
 }

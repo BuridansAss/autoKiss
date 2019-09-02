@@ -83,7 +83,6 @@ class Gender
 
         $countWidth = 0;
         $countHeight = self::REFERENCE_HEIGHT;
-        $i = 0;
 
         foreach ($images as $image) {
             $canvas->draw($image, $countWidth, $countHeight);

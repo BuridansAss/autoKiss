@@ -16,13 +16,14 @@ class MetaFrameAnimation
 
     /**
      * @param $gender
+     * @param $pathToFrame
      * @return Canvas
      * @throws ImagickException
      */
-    public function animate($gender)
+    public function animate($gender, $pathToFrame)
     {
         $genderClass = '\Tool\PictureCreator\Animation\Frame\\' . $gender;
-        $gender = new $genderClass();
+        $this->gender = new $genderClass($pathToFrame);
 
         try {
             return $this->gender->animate();
