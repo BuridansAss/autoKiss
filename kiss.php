@@ -11,6 +11,4 @@ define('BUILD', __DIR__ . '/build/');
 define('SOURCE', __DIR__ . '/source/');
 define('FRAME_BUILD', BUILD . 'static/game/images/collection/');
 
-
-
 new Unifier();
