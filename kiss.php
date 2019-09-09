@@ -1,6 +1,7 @@
 <?php
 
 use Tool\Path;
+use Tool\PictureCreator\Animation\Hat\MetaHatAnimation;
 use Tool\PictureCreator\Unifier;
 use Tool\Utils;
 
@@ -10,5 +11,7 @@ define('ROOT', __DIR__ . '/');
 define('BUILD', __DIR__ . '/build/');
 define('SOURCE', __DIR__ . '/source/');
 define('FRAME_BUILD', BUILD . 'static/game/images/collection/');
+define('HAT_BUILD', BUILD . 'static/game/assets/hats/animated/images/');
+
 
 new Unifier();

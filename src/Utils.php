@@ -74,7 +74,7 @@ class Utils
         if (count($dir) === 1) {
             return array_values($dir)[0];
         } else {
-            throw new Exception('Больше чем одна папка');
+            throw new Exception('Больше чем одна папка. Путь: ' . $path);
         }
     }
 }
