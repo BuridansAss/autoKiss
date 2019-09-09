@@ -24,7 +24,6 @@ class HatAnimator extends AbstractAnimator
         parent::__construct($path);
     }
 
-
     /**
      * @throws ImagickException
      * @throws Exception

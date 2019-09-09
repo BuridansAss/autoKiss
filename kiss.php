@@ -12,6 +12,6 @@ define('BUILD', __DIR__ . '/build/');
 define('SOURCE', __DIR__ . '/source/');
 define('FRAME_BUILD', BUILD . 'static/game/images/collection/');
 define('HAT_BUILD', BUILD . 'static/game/assets/hats/animated/images/');
+define('ICON_BUILD', BUILD . 'static/game/assets/nameicons/images/');
 
-
-new Unifier();
+echo print_r(Path::getSource(3), 1);

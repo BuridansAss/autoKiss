@@ -41,7 +41,7 @@ class HatNaming
         $hatId = self::hatId();
 
         if ($hatId === self::ERROR) {
-            throw new Exception('что-то не так с id рамки');
+            throw new Exception('что-то не так с id шапки');
         }
 
         if ($isStatic) {

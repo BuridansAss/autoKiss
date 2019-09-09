@@ -11,13 +11,16 @@ class Path
     const ANIMATION_FOLDER = 'Animation/';
     const FRAME_FOLDER     = 'frame/';
     const HAT_FOLDER       = 'hat/';
+    const ICON_FOLDER      = 'Icon/';
 
     const ITEM_HAT   = 1;
     const ITEM_FRAME = 2;
+    const ITEM_ICON  = 3;
 
     private static $itemMap = [
         self::ITEM_FRAME => self::FRAME_FOLDER,
-        self::ITEM_HAT   => self::HAT_FOLDER
+        self::ITEM_HAT   => self::HAT_FOLDER,
+        self::ITEM_ICON  => self::ICON_FOLDER
     ];
 
     /**
@@ -40,12 +43,21 @@ class Path
 
         if (isset(self::$itemMap[$item])) {
 
+            if ($item === self::ITEM_ICON) {
+                foreach ($sources as $source) {
+                    $pathToIcons = $source . self::ICON_FOLDER;
+                    $result[$source] = $pathToIcons;
+                }
+
+                return $result;
+            }
+
             foreach ($sources as $source) {
                 $pathToAnimationFolder = $source . self::ANIMATION_FOLDER;
                 try {
                     $pathToAnimationFolder = Utils::getOneDir($pathToAnimationFolder);
-                    $pathToHatAnimation    = $pathToAnimationFolder . self::$itemMap[$item];
-                    $result[$source]       = $pathToHatAnimation;
+                    $pathToAnimation    = $pathToAnimationFolder . self::$itemMap[$item];
+                    $result[$source]       = $pathToAnimation;
                 } catch (Exception $exception) {
                     echo $exception->getMessage();
                     continue;

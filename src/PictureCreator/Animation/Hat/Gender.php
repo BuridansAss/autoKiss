@@ -21,10 +21,20 @@ class Gender
     //т.к в Utils применяется array_diff то нумерация элементов не с нуля начинается
     const FIRST_IMAGE      = 2;
 
+    /**
+     * @var string
+     */
     protected $active;
 
+    /**
+     * @var string
+     */
     protected $path;
 
+    /**
+     * Gender constructor.
+     * @param $path
+     */
     public function __construct($path)
     {
         $this->path = $path;
@@ -69,8 +79,9 @@ class Gender
 
         $canvas = new Canvas();
         $canvas->createEmptyCanvas(self::REFERENCE_WIDTH, self::REFERENCE_HEIGHT);
-
         $canvas->draw($image, 0, 0);
+
+        unset($image);
 
         return $canvas;
     }
