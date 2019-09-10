@@ -17,6 +17,3 @@ define('HAT_BUILD', BUILD . 'static/game/assets/hats/animated/images/');
 define('ICON_BUILD', BUILD . 'static/game/assets/nameicons/images/');
 define('GIFTS_BUILD', BUILD . 'static/game/images/gifts/');
 define('OLD_GIFTS_SOURCE', ROOT . 'src/PictureCreator/Gifts/__src/');
-
-
-Unifier::createOldGiftStatic(1);

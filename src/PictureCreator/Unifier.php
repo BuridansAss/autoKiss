@@ -93,6 +93,9 @@ class Unifier
         }
     }
 
+    /**
+     * @param $folderId
+     */
     public static function createOldGiftStatic($folderId)
     {
         $pictures = Utils::scanDirFullPath(Path::getOldGiftFolder($folderId));
