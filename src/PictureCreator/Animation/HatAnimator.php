@@ -38,11 +38,8 @@ class HatAnimator extends AbstractAnimator
 
             $staticAllCanvas = $metaAnimator->staticImage();
             $staticAllCanvas->save(HatNaming::getAllHatName(self::IS_STATIC_IMAGE));
-            try {
-                Settings::setNextIdItem(Settings::HAT);
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
+
+            Settings::setNextIdItem(Settings::HAT);
         } else {
             $maleCanvas   = $metaAnimator->animate(self::MALE_CLASS, $this->path);
             $maleCanvas->save(HatNaming::getMaleHatName());
@@ -53,11 +50,8 @@ class HatAnimator extends AbstractAnimator
             $femaleCanvas->save(HatNaming::getFemaleHatName());
             $staticFemaleCanvas = $metaAnimator->staticImage();
             $staticFemaleCanvas->save(HatNaming::getFemaleHatName(self::IS_STATIC_IMAGE));
-            try {
-                Settings::setNextIdItem(Settings::HAT);
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
+
+            Settings::setNextIdItem(Settings::HAT);
         }
     }
 }

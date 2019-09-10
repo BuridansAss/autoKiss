@@ -35,21 +35,16 @@ class FrameAnimator extends AbstractAnimator
         if ($this->getType() === self::TYPE_UNI_SEX) {
             $allCanvas = $metaAnimator->animate(self::ALL_CLASS, $this->path);
             $allCanvas->save(FrameNaming::getAllFrameName());
-            try {
-                Settings::setNextIdItem(Settings::FRAME);
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
+
+            Settings::setNextIdItem(Settings::FRAME);
+
         } else {
             $maleCanvas   = $metaAnimator->animate(self::MALE_CLASS, $this->path);
             $maleCanvas->save(FrameNaming::getMaleFrameName());
             $femaleCanvas = $metaAnimator->animate(self::FEMALE_CLASS, $this->path);
             $femaleCanvas->save(FrameNaming::getFemaleFrameName());
-            try {
-                Settings::setNextIdItem(Settings::FRAME);
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
+
+            Settings::setNextIdItem(Settings::FRAME);
         }
 
     }

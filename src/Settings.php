@@ -39,12 +39,33 @@ class Settings
 
     /**
      * @param $item
-     * @throws Exception
      */
     public static function setNextIdItem($item)
     {
         $settings = self::getSettings();
         ++$settings['nextSet'][$item];
+        $json = json_encode($settings);
+
+        file_put_contents(ROOT . '/settings.json', $json);
+    }
+
+    /**
+     * @return int
+     */
+    public static function getNextGiftId()
+    {
+        $settings = self::getSettings();
+
+        return $settings['nextGiftId'];
+    }
+
+    /**
+     *  set next gift id
+     */
+    public static function setNextGiftId()
+    {
+        $settings = self::getSettings();
+        ++$settings['nextGiftId'];
         $json = json_encode($settings);
 
         file_put_contents(ROOT . '/settings.json', $json);

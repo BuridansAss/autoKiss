@@ -69,4 +69,33 @@ class Path
             throw new Exception('такого item не существует: ' . $item);
         }
     }
+
+    /**
+     * @return array
+     */
+    public static function getGiftsSource()
+    {
+        $sources = self::getSources();
+        $result = [];
+
+        foreach ($sources as $source) {
+            $haveDirs = Utils::getOnlyDirs($source);
+            if (!empty($haveDirs)) {
+                continue;
+            }
+
+            $result[] = $source;
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $numberOfFolder
+     * @return string
+     */
+    public static function getOldGiftFolder($numberOfFolder)
+    {
+        return OLD_GIFTS_SOURCE . $numberOfFolder . '/';
+    }
 }

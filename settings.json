@@ -1,1 +1,14 @@
-{"nextSet":{"frame":27,"hat":18,"icon":3},"nextGiftId":346}
+{
+  "sourceFolder": "\/home\/evgen\/projects\/kiss\/",
+  "nextSet": {
+    "frame": 29,
+    "hat": 20,
+    "icon": 47
+  },
+  "nextGiftId": 364,
+  "inSourceFolder": {
+    "images": {
+      "icon": "static\/game\/assets\/nameicons\/images"
+    }
+  }
+}

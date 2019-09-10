@@ -11,9 +11,6 @@ use Tool\Utils;
 
 class Gender
 {
-    const REFERENCE_SIZE_SMALL = 20;
-    const REFERENCE_SIZE_BIG   = 72;
-
     /**
      * @var string
      */
@@ -52,22 +49,19 @@ class Gender
                 unset($image);
                 continue;
             }
+
+            if (isset($image)) {
+
+                $canvas = new Canvas();
+                $canvas->createEmptyCanvas($size, $size);
+                $canvas->draw($image, 0, 0);
+
+                unset($image);
+
+                return $canvas;
+            }
         }
 
-        if (!isset($image)) {
-            return new Canvas();
-        }
-
-        if ($size !== self::REFERENCE_SIZE_SMALL || $size !== self::REFERENCE_SIZE_BIG) {
-            return  new Canvas();
-        }
-
-        $canvas = new Canvas();
-        $canvas->createEmptyCanvas($size, $size);
-        $canvas->draw($image, 0, 0);
-
-        unset($image);
-
-        return $canvas;
+        return new Canvas();
     }
 }
