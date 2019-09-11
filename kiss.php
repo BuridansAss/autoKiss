@@ -1,5 +1,6 @@
 <?php
 
+use Tool\Configs\Masquerade\IO\Reader;
 use Tool\Path;
 use Tool\PictureCreator\Animation\Hat\MetaHatAnimation;
 use Tool\PictureCreator\Gifts\Gift;
@@ -17,3 +18,14 @@ define('HAT_BUILD', BUILD . 'static/game/assets/hats/animated/images/');
 define('ICON_BUILD', BUILD . 'static/game/assets/nameicons/images/');
 define('GIFTS_BUILD', BUILD . 'static/game/images/gifts/');
 define('OLD_GIFTS_SOURCE', ROOT . 'src/PictureCreator/Gifts/__src/');
+define('TEMPLATES', ROOT. 'src/Configs/_templates/');
+
+$ana = Reader::read('/home/evgen/my_prj/kiss-regular-tasks-maker/src/Configs/_templates/gift_collections.config.php.template');
+
+arsort($ana);
+
+foreach ($ana as $key => $elem) {
+    echo "$elem => $key" . PHP_EOL;
+
+    sleep(1);
+}

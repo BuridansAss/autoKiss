@@ -77,4 +77,27 @@ class Utils
             throw new Exception('Больше чем одна папка. Путь: ' . $path);
         }
     }
+
+    public static function getFilesByExtension($path, $ext)
+    {
+        $filesAndDirs = self::scanDirFullPath($path);
+        $countSymbols = mb_strlen($ext, 'UTF-8');
+        $result = [];
+
+        foreach ($filesAndDirs as $fileOrDir) {
+            if (is_dir($fileOrDir)) {
+                continue;
+            }
+
+            $fileExt = substr($fileOrDir, -$countSymbols);
+
+            if ($fileExt !== $ext) {
+                continue;
+            }
+
+            $result[] = $fileOrDir;
+        }
+
+        return $result;
+    }
 }
