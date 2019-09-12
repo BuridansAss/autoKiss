@@ -1,14 +1,1 @@
-{
-  "sourceFolder": "\/home\/evgen\/projects\/kiss\/",
-  "nextSet": {
-    "frame": 29,
-    "hat": 20,
-    "icon": 47
-  },
-  "nextGiftId": 364,
-  "inSourceFolder": {
-    "images": {
-      "icon": "static\/game\/assets\/nameicons\/images"
-    }
-  }
-}
+{"sourceFolder":"\/home\/evgen\/projects\/kiss\/","nextSet":{"frame":424,"hat":315,"icon":368},"nextGiftId":364,"inSourceFolder":{"images":{"icon":"static\/game\/assets\/nameicons\/images\/"}}}

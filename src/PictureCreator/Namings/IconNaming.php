@@ -54,6 +54,10 @@ class IconNaming
             throw new Exception('что-то не так с id иконки');
         }
 
+        if ($GLOBALS['isNeedInSource']) {
+            return Settings::getIconsPathInSourceFolder(Settings::TYPE_IMAGES) . self::$sizeMap[$size] . $iconId . self::PNG_POSTFIX;
+        }
+
         return ICON_BUILD . self::$sizeMap[$size] . $iconId . self::PNG_POSTFIX;
     }
 }

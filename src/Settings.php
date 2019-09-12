@@ -8,9 +8,17 @@ use Exception;
 
 class Settings
 {
-    const FRAME = 'frame';
-    const HAT   = 'hat';
-    const ICON  = 'icon';
+    const FRAME  = 'frame';
+    const HAT    = 'hat';
+    const ICON   = 'icon';
+    const IMAGES = 'images';
+
+    const TYPE_IMAGES = 1;
+
+    private static $mapTypes = [
+        self::TYPE_IMAGES => self::IMAGES
+    ];
+
 
     public static function getSettings()
     {
@@ -19,9 +27,12 @@ class Settings
         return json_decode($json, 1);
     }
 
-    public static function setSettings()
+    /**
+     * @param $json string
+     */
+    public static function setSettings($json)
     {
-
+        file_put_contents(ROOT . '/settings.json', $json);
     }
 
     /**
@@ -46,7 +57,12 @@ class Settings
         ++$settings['nextSet'][$item];
         $json = json_encode($settings);
 
-        file_put_contents(ROOT . '/settings.json', $json);
+        self::setSettings($json);
+    }
+
+    public static function getSourceFolder()
+    {
+        return self::getSettings()['sourceFolder'];
     }
 
     /**
@@ -68,6 +84,33 @@ class Settings
         ++$settings['nextGiftId'];
         $json = json_encode($settings);
 
-        file_put_contents(ROOT . '/settings.json', $json);
+        self::setSettings($json);
+    }
+
+    /**
+     * @param $type
+     * @return mixed
+     * @throws Exception
+     */
+    private static function getStructFromSourceFolder($type)
+    {
+        if (isset(self::$mapTypes[$type])) {
+            $settings = self::getSettings();
+            return $settings['inSourceFolder'][self::$mapTypes[$type]];
+        }
+
+        throw new Exception('такой структуры несуществует ' . $type);
+    }
+
+    /**
+     * @param $type
+     * @return mixed
+     * @throws Exception
+     */
+    public static function getIconsPathInSourceFolder($type)
+    {
+        $res = self::getStructFromSourceFolder($type);
+
+        return self::getSourceFolder() . $res[self::ICON];
     }
 }

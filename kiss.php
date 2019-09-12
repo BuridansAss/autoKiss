@@ -6,6 +6,7 @@ use Tool\PictureCreator\Animation\Hat\MetaHatAnimation;
 use Tool\PictureCreator\Gifts\Gift;
 use Tool\PictureCreator\Gifts\GiftBase;
 use Tool\PictureCreator\Unifier;
+use Tool\Settings;
 use Tool\Utils;
 
 require 'vendor/autoload.php';
@@ -20,12 +21,8 @@ define('GIFTS_BUILD', BUILD . 'static/game/images/gifts/');
 define('OLD_GIFTS_SOURCE', ROOT . 'src/PictureCreator/Gifts/__src/');
 define('TEMPLATES', ROOT. 'src/Configs/_templates/');
 
-$ana = Reader::read('/home/evgen/my_prj/kiss-regular-tasks-maker/src/Configs/_templates/gift_collections.config.php.template');
+$GLOBALS['isNeedInSource'] = true;
 
-arsort($ana);
-
-foreach ($ana as $key => $elem) {
-    echo "$elem => $key" . PHP_EOL;
-
-    sleep(1);
-}
+//Unifier::createFrameStatic();
+//Unifier::createHatStatic();
+Unifier::createIconStatic();
