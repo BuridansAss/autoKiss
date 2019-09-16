@@ -25,4 +25,5 @@ $GLOBALS['isNeedInSource'] = true;
 
 //Unifier::createFrameStatic();
 //Unifier::createHatStatic();
-Unifier::createIconStatic();
+//Unifier::createIconStatic();
+Unifier::createNewGiftsStatic();
