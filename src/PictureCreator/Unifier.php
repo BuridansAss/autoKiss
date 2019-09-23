@@ -57,6 +57,9 @@ class Unifier
 
     /**
      * create Icon images
+     * эта штука сразу кидает картинки в нужную папку в проекте из settings.json
+     * inSourceFolder : {.....}
+     *
      */
     public static function  createIconStatic()
     {
