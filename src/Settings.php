@@ -113,4 +113,59 @@ class Settings
 
         return self::getSourceFolder() . $res[self::ICON];
     }
+
+
+    /**
+     * @return mixed
+     */
+    public static function getNextEventId()
+    {
+        $settings = self::getSettings();
+
+        return $settings['nextEventId'];
+    }
+
+    /**
+     * set next event id
+     */
+    public static function setNextEventId()
+    {
+        $settings = self::getSettings();
+        ++$settings['nextEventId'];
+        $json = json_encode($settings);
+
+        self::setSettings($json);
+    }
+
+    /**
+     * @return string
+     */
+    public static function getStickersSource()
+    {
+        $settings = self::getSettings();
+
+        return $settings['stickersSrc'];
+    }
+
+    /**
+     * @return int
+     */
+    public static function getNextStickerId()
+    {
+        $settings = self::getSettings();
+
+        return $settings['nextStickersId'];
+    }
+
+    /**
+     * set next sticker id
+     */
+    public static function setNextStickerId()
+    {
+        $settings = self::getSettings();
+        ++$settings['nextStickersId'];
+        $json = json_encode($settings);
+
+        self::setSettings($json);
+    }
 }

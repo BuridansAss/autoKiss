@@ -32,6 +32,14 @@ class Path
     }
 
     /**
+     * @return array
+     */
+    private static function getMobileSources()
+    {
+        return Utils::getFilesByExtension(MOBILE_SOURCE, 'png');
+    }
+
+    /**
      * @param $item
      * @return array
      * @throws Exception
@@ -46,6 +54,9 @@ class Path
             if ($item === self::ITEM_ICON) {
                 foreach ($sources as $source) {
                     $pathToIcons = $source . self::ICON_FOLDER;
+                    if (!is_dir($pathToIcons)) {
+                        continue;
+                    }
                     $result[$source] = $pathToIcons;
                 }
 
@@ -54,6 +65,9 @@ class Path
 
             foreach ($sources as $source) {
                 $pathToAnimationFolder = $source . self::ANIMATION_FOLDER;
+                if (!is_dir($pathToAnimationFolder)) {
+                    continue;
+                }
                 try {
                     $pathToAnimationFolder = Utils::getOneDir($pathToAnimationFolder);
                     $pathToAnimation    = $pathToAnimationFolder . self::$itemMap[$item];
@@ -97,5 +111,14 @@ class Path
     public static function getOldGiftFolder($numberOfFolder)
     {
         return OLD_GIFTS_SOURCE . $numberOfFolder . '/';
+    }
+
+
+    /**
+     * @return array
+     */
+    public static function getEventStarsSource()
+    {
+        return self::getMobileSources();
     }
 }

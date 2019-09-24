@@ -1,4 +1,7 @@
 vendor/
 .idea/
-source/*/
+source/*/*/
+source/mobile/*.png
 build/*/*/*/*/
+settings.json
+!example.settings.json

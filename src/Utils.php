@@ -78,20 +78,18 @@ class Utils
         }
     }
 
+    /**
+     * @param $path
+     * @param $ext
+     * @return array
+     */
     public static function getFilesByExtension($path, $ext)
     {
         $filesAndDirs = self::scanDirFullPath($path);
-        $countSymbols = mb_strlen($ext, 'UTF-8');
         $result = [];
 
         foreach ($filesAndDirs as $fileOrDir) {
-            if (is_dir($fileOrDir)) {
-                continue;
-            }
-
-            $fileExt = substr($fileOrDir, -$countSymbols);
-
-            if ($fileExt !== $ext) {
+            if (!self::isExtension($fileOrDir, $ext)) {
                 continue;
             }
 
@@ -99,5 +97,40 @@ class Utils
         }
 
         return $result;
+    }
+
+    /**
+     * @param $path
+     * @param $ext
+     * @return bool
+     */
+    public static function isExtension($path, $ext)
+    {
+        if (is_dir($path)) {
+            return false;
+        }
+
+        $countSymbols = mb_strlen($ext, 'UTF-8');
+        $fileExt = substr($path, -$countSymbols);
+
+        if ($fileExt !== $ext) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * @param $name
+     * @param $ext
+     * @return bool|string
+     */
+    public static function getFileNameWithoutExtension($name, $ext)
+    {
+        $countExtSymbols = mb_strlen($ext, 'UTF-8');
+        $countNameSymbols = mb_strlen($name, 'UTF-8');
+        $position = $countNameSymbols - $countExtSymbols;
+
+        return substr($name, 0, $position);
     }
 }

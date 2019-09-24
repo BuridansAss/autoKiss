@@ -7,6 +7,7 @@ use Tool\PictureCreator\Gifts\Gift;
 use Tool\PictureCreator\Gifts\GiftBase;
 use Tool\PictureCreator\Unifier;
 use Tool\Settings;
+use Tool\TMP\StickersRename;
 use Tool\Utils;
 
 require 'vendor/autoload.php';
@@ -20,12 +21,16 @@ define('ICON_BUILD', BUILD . 'static/game/assets/nameicons/images/');
 define('GIFTS_BUILD', BUILD . 'static/game/images/gifts/');
 define('OLD_GIFTS_SOURCE', ROOT . 'src/PictureCreator/Gifts/__src/');
 define('TEMPLATES', ROOT. 'src/Configs/_templates/');
+define('MOBILE_SOURCE', SOURCE . 'mobile/');
+define('EVENT_STARS_MOBILE', BUILD . 'static-mobile/contest/icons/');
 
 $GLOBALS['isNeedInSource'] = true;
 
 //Unifier::createFrameStatic();
 //Unifier::createHatStatic();
-Unifier::createIconStatic();
+//Unifier::createIconStatic();
 //Unifier::createOldGiftStatic(3);
 //Unifier::createNewGiftsStatic();
+//Unifier::createEventStarsStatic();
 
+echo print_r(StickersRename::renameByPath('/home/evgen/Загрузки/Стикеры/1/'), 1);

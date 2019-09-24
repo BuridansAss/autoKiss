@@ -11,6 +11,7 @@ use Tool\PictureCreator\Animation\FrameAnimator;
 use Tool\PictureCreator\Animation\HatAnimator;
 use Tool\PictureCreator\Animation\IconAnimator;
 use Tool\PictureCreator\Gifts\Gift;
+use Tool\PictureCreator\Mobile\EventStars;
 use Tool\Utils;
 
 class Unifier
@@ -106,6 +107,20 @@ class Unifier
         foreach ($pictures as $picture) {
             $gift = new Gift($picture);
             $gift->drawGifts();
+            echo $picture . PHP_EOL;
+        }
+    }
+
+    /**
+     *
+     */
+    public static function createEventStarsStatic()
+    {
+        $pictures = Path::getEventStarsSource();
+
+        foreach ($pictures as $picture) {
+            $stars = new EventStars($picture);
+            $stars->createImagesByImage();
             echo $picture . PHP_EOL;
         }
     }
