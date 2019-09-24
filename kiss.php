@@ -1,5 +1,6 @@
 <?php
 
+use Tool\App;
 use Tool\Configs\Masquerade\IO\Reader;
 use Tool\Path;
 use Tool\PictureCreator\Animation\Hat\MetaHatAnimation;
@@ -33,4 +34,4 @@ $GLOBALS['isNeedInSource'] = true;
 //Unifier::createNewGiftsStatic();
 //Unifier::createEventStarsStatic();
 
-echo print_r(StickersRename::renameByPath('/home/evgen/Загрузки/Стикеры/1/'), 1);
+App::Run();
