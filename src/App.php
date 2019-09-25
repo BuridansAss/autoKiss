@@ -4,6 +4,8 @@
 namespace Tool;
 
 
+use Tool\TMP\StickersRename;
+
 class App
 {
     const NEXT_FRAME = '-nextFrame';
@@ -15,9 +17,16 @@ class App
 
     public static function Run()
     {
-        global $argv;
-        self::$argv = $argv;
+        self::renameStickers();
+    }
 
-        $command = self::$argv[1];
+
+    public static function renameStickers()
+    {
+        $stickersSrc = Utils::scanDirFullPath(Settings::getStickersSource());
+
+        foreach ($stickersSrc as $lineStickers) {
+            StickersRename::renameByPath($lineStickers);
+        }
     }
 }
