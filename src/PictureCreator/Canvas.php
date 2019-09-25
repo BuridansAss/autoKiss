@@ -11,6 +11,9 @@ use ImagickPixel;
 class Canvas
 {
 
+    //TODO need clear
+
+
     /**
      * @var Imagick
      */

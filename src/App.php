@@ -4,6 +4,7 @@
 namespace Tool;
 
 
+use Tool\TMP\ChestStatic;
 use Tool\TMP\StickersRename;
 
 class App
@@ -17,7 +18,12 @@ class App
 
     public static function Run()
     {
-        self::renameStickers();
+        //self::renameStickers();
+        try {
+            ChestStatic::create('/home/evgen/my_prj/kiss-regular-tasks-maker/source/chests/');
+        } catch (\ImagickException $e) {
+            $e->getMessage();
+        }
     }
 
 
