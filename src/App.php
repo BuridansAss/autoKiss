@@ -4,6 +4,7 @@
 namespace Tool;
 
 
+use Tool\PictureCreator\Unifier;
 use Tool\TMP\ChestStatic;
 use Tool\TMP\StickersRename;
 
@@ -18,12 +19,8 @@ class App
 
     public static function Run()
     {
-        //self::renameStickers();
-        try {
-            ChestStatic::create('/home/evgen/my_prj/kiss-regular-tasks-maker/source/chests/');
-        } catch (\ImagickException $e) {
-            $e->getMessage();
-        }
+        self::createSet();
+        self::createGiftsForSet(5);
     }
 
 
@@ -34,5 +31,33 @@ class App
         foreach ($stickersSrc as $lineStickers) {
             StickersRename::renameByPath($lineStickers);
         }
+    }
+
+    public static function createChestStatic()
+    {
+        try {
+            ChestStatic::create('/home/evgen/my_prj/kiss-regular-tasks-maker/source/chests/');
+        } catch (\ImagickException $e) {
+            $e->getMessage();
+        }
+    }
+
+    public static function createSet()
+    {
+        Unifier::createFrameStatic();
+        Unifier::createHatStatic();
+        Unifier::createIconStatic();
+    }
+
+    public static function createGiftsForSet($id)
+    {
+        Unifier::createOldGiftStatic($id);
+        Unifier::createOldGiftStatic($id);
+        Unifier::createOldGiftStatic($id);
+    }
+
+    public static function createFrameStatic()
+    {
+        Unifier::createFrameStatic();
     }
 }
