@@ -34,4 +34,4 @@ $GLOBALS['isNeedInSource'] = true;
 //Unifier::createNewGiftsStatic();
 //Unifier::createEventStarsStatic();
 
-App::Run();
+\AutoKiss\App::run();
