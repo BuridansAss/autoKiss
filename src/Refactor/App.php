@@ -4,12 +4,17 @@
 namespace AutoKiss;
 
 
+use AutoKiss\Notifications\ConsolePrinter;
+
 class App
 {
+    //;42
     public static function run($argv)
     {
-        echo "\033[01;35;42m Request has been sent. Please wait for my reply! \x1b[0m";
+        $n = new ConsolePrinter();
 
-        //echo print_r($argv);
+        $n->badMessage('hui');
+        $n->goodMessage('hui');
+        $n->neutralMessage('hui');
     }
 }
