@@ -1,7 +1,7 @@
 <?php
 
 
-namespace AutoKiss\Statics;
+namespace AutoKiss\Statics\Abstracts;
 
 
 interface AbstractFactory

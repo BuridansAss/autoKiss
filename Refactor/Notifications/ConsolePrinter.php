@@ -53,4 +53,15 @@ class ConsolePrinter
             ->setFontColor(Formatter::WHITE)
             ->printLn();
     }
+
+    /**
+     * @param $message
+     */
+    public static function exceptionExitFromApp($message)
+    {
+        $cp = new self();
+
+        $cp->badMessage($message);
+        die();
+    }
 }

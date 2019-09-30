@@ -1,0 +1,21 @@
+{
+  "sourceKiss": "\/home\/evgen\/projects\/kiss\/",
+  "sourceRes": "",
+  "sourceBuild": "",
+  "inSourceFolder": {
+    "images": {
+      "icon": "static\/game\/assets\/nameicons\/images\/"
+    },
+    "configs": {
+      "shopConfig": ""
+    }
+  },
+  "nextSet": {
+    "frame": 428,
+    "hat": 318,
+    "icon": 370
+  },
+  "nextGiftId": 5254,
+  "nextEventId": 229,
+  "nextStickersId": 861
+}

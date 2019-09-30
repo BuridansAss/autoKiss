@@ -5,16 +5,13 @@ namespace AutoKiss;
 
 
 use AutoKiss\Notifications\ConsolePrinter;
+use AutoKiss\Statics\StaticsFactory;
 
 class App
 {
     //;42
     public static function run($argv)
     {
-        $n = new ConsolePrinter();
-
-        $n->badMessage('hui');
-        $n->goodMessage('hui');
-        $n->neutralMessage('hui');
+        $sf = StaticsFactory::createFactory('icon');
     }
 }

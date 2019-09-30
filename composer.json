@@ -8,7 +8,7 @@
     "autoload": {
         "psr-4": {
             "Tool\\": "src/",
-            "AutoKiss\\": "src/Refactor/"
+            "AutoKiss\\": "Refactor/"
         }
     }
 }
