@@ -2,7 +2,11 @@
 
 require "vendor/autoload.php";
 
+
 use AutoKiss\App;
+
+
+define('ROOT', __DIR__ . '/');
 
 function commands($argv){
 

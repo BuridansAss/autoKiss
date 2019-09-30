@@ -1,7 +1,7 @@
 {
   "sourceKiss": "\/home\/evgen\/projects\/kiss\/",
-  "sourceRes": "",
-  "sourceBuild": "",
+  "res": "/home/evgen/my_prj/kiss/source/",
+  "build": "/home/evgen/my_prj/kiss/build/",
   "inSourceFolder": {
     "images": {
       "icon": "static\/game\/assets\/nameicons\/images\/"

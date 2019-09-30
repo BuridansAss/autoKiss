@@ -10,6 +10,16 @@ use AutoKiss\Statics\Abstracts\Timeline;
 
 class Frame extends AbstractFrame implements Timeline, Nominal
 {
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        foreach ($this->frameDirs as $dir) {
+            $this->findOutGender($dir);
+        }
+    }
+
     /**
      * @return string
      */

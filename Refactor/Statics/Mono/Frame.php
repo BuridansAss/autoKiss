@@ -10,6 +10,10 @@ use AutoKiss\Statics\Abstracts\Nominal;
 
 class Frame extends AbstractFrame implements Mono, Nominal
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * @return string

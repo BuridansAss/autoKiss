@@ -18,6 +18,7 @@ abstract class Gender
     ];
 
     /**
+     * @param $path
      * @return string
      */
     abstract protected function findOutGender() : string;
