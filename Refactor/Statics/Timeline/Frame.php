@@ -10,7 +10,6 @@ use AutoKiss\Statics\Abstracts\Timeline;
 
 class Frame extends AbstractFrame implements Timeline, Nominal
 {
-
     /**
      * @return string
      */

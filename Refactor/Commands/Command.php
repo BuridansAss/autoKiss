@@ -8,4 +8,6 @@ interface Command
 {
     public function getPath() : string ;
 
+    public function handle() : void;
+
 }
