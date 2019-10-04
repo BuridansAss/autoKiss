@@ -30,10 +30,10 @@ $GLOBALS['isNeedInSource'] = true;
 //Unifier::createFrameStatic();
 //Unifier::createHatStatic();
 //Unifier::createIconStatic();
-Unifier::createOldGiftStatic(6);
-Unifier::createOldGiftStatic(6);
-Unifier::createOldGiftStatic(6);
-//Unifier::createNewGiftsStatic();
+//Unifier::createOldGiftStatic(6);
+//Unifier::createOldGiftStatic(6);
+//Unifier::createOldGiftStatic(6);
+Unifier::createNewGiftsStatic();
 //Unifier::createEventStarsStatic();
 
 
