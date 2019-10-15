@@ -30,10 +30,69 @@ $GLOBALS['isNeedInSource'] = true;
 //Unifier::createFrameStatic();
 //Unifier::createHatStatic();
 //Unifier::createIconStatic();
-//Unifier::createOldGiftStatic(6);
-//Unifier::createOldGiftStatic(6);
-//Unifier::createOldGiftStatic(6);
-Unifier::createNewGiftsStatic();
+//Unifier::createOldGiftStatic(7);
+//Unifier::createOldGiftStatic(7);
+//Unifier::createOldGiftStatic(7);
+//Unifier::createNewGiftsStatic();
 //Unifier::createEventStarsStatic();
+
+
+$pathToBot = '/home/evgen/Загрузки/bots/';
+
+$botsDirs = Utils::getOnlyDirs($pathToBot);
+
+function getExt($path)
+{
+    $jpg = '.jpg';
+    $jpeg = '.jpeg';
+    $png = '.png';
+
+    if (Utils::isExtension($path , $jpg)) {
+        return $jpg;
+    }
+
+    if (Utils::isExtension($path , $jpeg)) {
+        return $jpeg;
+    }
+
+    if (Utils::isExtension($path , $png)) {
+        return $png;
+    }
+}
+
+foreach ($botsDirs as $dir) {
+    $dirToMale = Utils::scanDirFullPath($dir . 'male/');
+    $dirToFemale = Utils::scanDirFullPath($dir . 'female/');
+
+    $pathToM = $dir . 'male/';
+    $pathToF = $dir . 'female/';
+
+    //$i = 0;
+    //foreach ($dirToFemale as $picture) {
+
+    //    $ext = getExt($picture);
+
+    //    rename($picture , $pathToF . 'bot' . $i . $ext);
+
+    //    echo $pathToF . 'bot' . $i . $ext . PHP_EOL;
+
+    //    $i++;
+    //}
+
+    //$i = 0;
+    //foreach ($dirToMale as $picture) {
+
+    //    $ext = getExt($picture);
+
+    //    rename($picture , $pathToM . 'bot' . $i . $ext);
+
+    //    echo $pathToM . 'bot' . $i . $ext . PHP_EOL;
+
+    //    $i++;
+    //}
+
+    \Tool\TMP\ChangeExt::change($pathToM);
+    \Tool\TMP\ChangeExt::change($pathToF);
+}
 
 
