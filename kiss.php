@@ -67,29 +67,29 @@ foreach ($botsDirs as $dir) {
     $pathToM = $dir . 'male/';
     $pathToF = $dir . 'female/';
 
-    //$i = 0;
-    //foreach ($dirToFemale as $picture) {
+    $i = 45;
+    foreach ($dirToFemale as $picture) {
 
-    //    $ext = getExt($picture);
+        $ext = getExt($picture);
 
-    //    rename($picture , $pathToF . 'bot' . $i . $ext);
+        rename($picture , $pathToF . 'bot' . $i . $ext);
 
-    //    echo $pathToF . 'bot' . $i . $ext . PHP_EOL;
+        echo $pathToF . 'bot' . $i . $ext . PHP_EOL;
 
-    //    $i++;
-    //}
+        $i++;
+    }
 
-    //$i = 0;
-    //foreach ($dirToMale as $picture) {
+    $i = 30;
+    foreach ($dirToMale as $picture) {
 
-    //    $ext = getExt($picture);
+        $ext = getExt($picture);
 
-    //    rename($picture , $pathToM . 'bot' . $i . $ext);
+        rename($picture , $pathToM . 'bot' . $i . $ext);
 
-    //    echo $pathToM . 'bot' . $i . $ext . PHP_EOL;
+        echo $pathToM . 'bot' . $i . $ext . PHP_EOL;
 
-    //    $i++;
-    //}
+        $i++;
+    }
 
     \Tool\TMP\ChangeExt::change($pathToM);
     \Tool\TMP\ChangeExt::change($pathToF);

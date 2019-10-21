@@ -4,10 +4,21 @@
 namespace AutoKiss\Commands;
 
 
-interface Command
+abstract class Command
 {
-    public function getPath() : string ;
+    /**
+     * @var string
+     */
+    private $name;
 
-    public function handle() : void;
+    /**
+     * Command constructor.
+     * @param $name
+     */
+    protected function __construct($name)
+    {
+        $this->name = $name;
+    }
 
+    public abstract static function create() : Command;
 }

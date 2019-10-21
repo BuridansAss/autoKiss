@@ -5,6 +5,7 @@ namespace AutoKiss;
 
 
 use AutoKiss\Commands\CommandsBuilder;
+use AutoKiss\Commands\Splitter;
 use AutoKiss\Notifications\ConsolePrinter;
 use Exception;
 
@@ -23,21 +24,7 @@ class App
      */
     private static function splitAndHandle($argv)
     {
-        unset($argv[0]);
-
-        foreach ($argv as $arg) {
-            $arg = explode("=", $arg);
-
-            $command = $arg[0];
-            $params  = explode(':', $arg[1]);
-
-            try {
-                $commandObj = CommandsBuilder::build($command, $params);
-                $commandObj->handle();
-            } catch (Exception $e) {
-                ConsolePrinter::exceptionExitFromApp($e->getMessage());
-            }
-
-        }
+        Splitter::setCliArgs($argv);
+        Splitter::split();
     }
 }
