@@ -12,6 +12,11 @@ abstract class Command
     private $name;
 
     /**
+     * @var array
+     */
+    private $subscribers;
+
+    /**
      * Command constructor.
      * @param $name
      */
@@ -20,5 +25,31 @@ abstract class Command
         $this->name = $name;
     }
 
-    public abstract static function create() : Command;
+    /**
+     * вызывает нужные методы у подписчиков
+     */
+    public function update() : void
+    {
+        foreach ($this->subscribers as $subscriber) {
+            $subscriber->process();
+        }
+    }
+
+    /**
+     * @param Subscriber $subscriber
+     */
+    private function addSubscriber(Subscriber $subscriber)
+    {
+        $this->subscribers[] = $subscriber;
+    }
+
+    /**
+     * @param $subscribers array
+     */
+    protected function initSubscribers($subscribers)
+    {
+        foreach ($subscribers as $subscriber) {
+
+        }
+    }
 }

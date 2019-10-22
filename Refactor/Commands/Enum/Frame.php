@@ -18,11 +18,8 @@ class Frame extends Command
         parent::__construct(self::FRAME);
     }
 
-    /**
-     * @return Frame
-     */
-    public static function create() : Command
+    public function update(): void
     {
-        return new self();
+        // TODO: Implement update() method.
     }
 }

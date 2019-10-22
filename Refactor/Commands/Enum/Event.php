@@ -9,8 +9,9 @@ use AutoKiss\Commands\Command;
 class Event extends Command
 {
 
-    public static function create(): Command
+
+    public function update(): void
     {
-        // TODO: Implement create() method.
+        // TODO: Implement update() method.
     }
 }

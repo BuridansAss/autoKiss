@@ -33,11 +33,11 @@ $GLOBALS['isNeedInSource'] = true;
 //Unifier::createOldGiftStatic(7);
 //Unifier::createOldGiftStatic(7);
 //Unifier::createOldGiftStatic(7);
-//Unifier::createNewGiftsStatic();
+Unifier::createNewGiftsStatic();
 //Unifier::createEventStarsStatic();
 
 
-$pathToBot = '/home/evgen/Загрузки/bots/';
+/*$pathToBot = '/home/evgen/Загрузки/bots/';
 
 $botsDirs = Utils::getOnlyDirs($pathToBot);
 
@@ -93,6 +93,6 @@ foreach ($botsDirs as $dir) {
 
     \Tool\TMP\ChangeExt::change($pathToM);
     \Tool\TMP\ChangeExt::change($pathToF);
-}
+}*/
 
 
